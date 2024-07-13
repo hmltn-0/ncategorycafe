@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Recent Posts</h2>
+    {% for post in posts %}
+        <article>
+            <h3><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h3>
+            <p>{{ post.content[:100] }}...</p>
+            <p>Posted on: {{ post.created_at.strftime('%Y-%m-%d') }}</p>
+        </article>
+    {% endfor %}
+{% endblock %}
