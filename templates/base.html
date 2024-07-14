@@ -3,22 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Blog</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>The n-Category Café</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-image: url('path_to_neon_coffee_sign.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding: 20px;
+            height: 100px;
+        }
+        h1 {
+            color: #FFFF99;
+            margin: 0;
+            padding-left: 120px;
+        }
+        .subtitle {
+            color: #FFFF99;
+            margin: 0;
+            padding-left: 120px;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+        }
+        .content {
+            background-color: white;
+            color: black;
+            width: 70%;
+            padding: 20px;
+            margin-top: 20px;
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Simple Blog</h1>
-        <nav>
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('create_post') }}">Create Post</a>
-        </nav>
+        <h1>The n-Category Café</h1>
+        <p class="subtitle">A group blog on math, physics and philosophy</p>
     </header>
     <main>
-        {% block content %}{% endblock %}
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2024 Simple Blog</p>
-    </footer>
 </body>
 </html>
