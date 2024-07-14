@@ -13,22 +13,29 @@
             padding: 0;
         }
         header {
-            background-image: url('path_to_neon_coffee_sign.jpg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: left center;
-            padding: 20px;
-            height: 100px;
-        }
+        background-image: url("{{ url_for('static', filename='images/neon_coffee_sign.webp') }}");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+        padding: 20px;
+        height: 150px; /* Adjust this value based on your image size */
+        text-align: center;
+    }
         h1 {
             color: #FFFF99;
             margin: 0;
-            padding-left: 120px;
+            padding-top: 60px; /* Adjust this value to position the title below the neon sign */
+        }
+        h1 a {
+            color: #FFFF99;
+            text-decoration: none;
+        }
+        h1 a:hover {
+            text-decoration: underline;
         }
         .subtitle {
             color: #FFFF99;
             margin: 0;
-            padding-left: 120px;
         }
         main {
             display: flex;
@@ -47,7 +54,7 @@
 </head>
 <body>
     <header>
-        <h1>The n-Category Café</h1>
+        <h1><a href="{{ url_for('index') }}">The n-Category Café</a></h1>
         <p class="subtitle">A group blog on math, physics and philosophy</p>
     </header>
     <main>
